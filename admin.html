@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Admin Dashboard to manage registrations, search candidates, and listen to submitted vocal audition audio tracks.">
+  <title>Admin Dashboard | Battle of Singing 2026</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo" style="display: flex; align-items: center; gap: 12px;">
+        <img src="gla-logo.jpg" alt="GLA University Logo" style="height: 45px; border-radius: 4px; object-fit: contain;">
+        <span>Battle of Singing</span>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#prizes">Prizes</a>
+        <a href="index.html#rules">Rules</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="admin.html" class="active">Dashboard</a>
+        <a href="register.html" class="btn-nav-register">Register Now</a>
+      </nav>
+    </header>
+
+    <!-- Admin Panel Card -->
+    <div class="glass-card">
+      <div class="admin-header-row">
+        <h2>Registrations Dashboard</h2>
+        <div id="registration-count-badge" class="badge badge-solo" style="font-size: 0.9rem; padding: 6px 15px;">
+          Total Registrations: <span id="reg-count-number">0</span>
+        </div>
+      </div>
+
+      <!-- Search & Filters Bar -->
+      <div class="search-filter-bar">
+        <div class="search-input-wrapper">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="admin-search-input" placeholder="Search by name, roll number, or registration ID..." oninput="filterRegistrations()">
+        </div>
+
+        <select id="admin-category-filter" class="filter-select" onchange="filterRegistrations()">
+          <option value="all">All Categories</option>
+          <option value="solo">Solo Performance</option>
+          <option value="duet">Duet Performance</option>
+        </select>
+
+        <select id="admin-course-filter" class="filter-select" onchange="filterRegistrations()">
+          <option value="all">All Courses</option>
+          <option value="B.Tech">B.Tech</option>
+          <option value="BCA">BCA</option>
+          <option value="B.Sc">B.Sc</option>
+          <option value="M.Tech">M.Tech</option>
+          <option value="MCA">MCA</option>
+          <option value="MBA">MBA</option>
+        </select>
+      </div>
+
+      <!-- Registrations Data Table -->
+      <div class="table-responsive">
+        <table id="registrations-table">
+          <thead>
+            <tr>
+              <th>Registration ID</th>
+              <th>Performer Name</th>
+              <th>Roll Number</th>
+              <th>Course & Branch</th>
+              <th>Category</th>
+              <th style="text-align: center;">Demo Track</th>
+              <th style="text-align: center;">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="registrations-list-tbody">
+            <!-- Table rows will be populated dynamically -->
+          </tbody>
+        </table>
+
+        <!-- Empty State Placeholder -->
+        <div id="empty-state-placeholder" class="no-registrations-placeholder" style="display: none;">
+          <i class="fa-solid fa-music"></i>
+          <p>No registration records found matching the filters.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pinned Global Audio Playback Controller -->
+    <div id="global-audio-panel" class="global-audio-panel">
+      <div class="global-audio-title">
+        Now Playing: <span id="global-track-title">-</span>
+      </div>
+      <div class="global-audio-controls">
+        <button id="global-play-btn" class="play-pause-btn" onclick="toggleGlobalAudio()">
+          <i class="fa-solid fa-play"></i>
+        </button>
+        <div class="audio-progress-container">
+          <span id="global-time-current" class="time-display">0:00</span>
+          <div id="global-progress-wrapper" class="progress-bar-wrapper" onclick="seekGlobalAudio(event)">
+            <div id="global-progress-fill" class="progress-bar-fill"></div>
+          </div>
+          <span id="global-time-duration" class="time-display">0:00</span>
+        </div>
+      </div>
+      <button class="btn-close-global-audio" onclick="closeGlobalAudio()" title="Close Player">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p style="font-weight: 600; margin-bottom: 8px; color: #fff;">Organized by GLA University</p>
+      <p style="font-size: 0.85rem; color: var(--text-secondary);">Designed with ❤️ by Prakash Kumar Gupta</p>
+    </footer>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

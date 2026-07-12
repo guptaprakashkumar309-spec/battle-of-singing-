@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Register for the Battle of Singing 2026. Fill out participant details, choose Solo or Duet, and upload your audition audio track.">
+  <title>Register | Battle of Singing 2026</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo" style="display: flex; align-items: center; gap: 12px;">
+        <img src="gla-logo.jpg" alt="GLA University Logo" style="height: 45px; border-radius: 4px; object-fit: contain;">
+        <span>Battle of Singing</span>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#prizes">Prizes</a>
+        <a href="index.html#rules">Rules</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="register.html" class="active">Register</a>
+      </nav>
+    </header>
+
+    <!-- Registration Card Container -->
+    <div id="registration-card-wrapper" class="glass-card">
+      <div class="form-title-group">
+        <h2>Event Registration</h2>
+        <p>Fill in your details and upload your vocals demo to confirm your audition slot.</p>
+      </div>
+
+      <form id="registration-form" novalidate>
+        <!-- Selector for Solo vs Duet Performance -->
+        <div class="participation-selector">
+          <input type="hidden" name="participationType" id="participationType" value="solo">
+          <div class="selector-option active" id="option-solo" onclick="setParticipationType('solo')">
+            <i class="fa-solid fa-user"></i> Solo Performance
+          </div>
+          <div class="selector-option" id="option-duet" onclick="setParticipationType('duet')">
+            <i class="fa-solid fa-users"></i> Duet Performance
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <!-- Section Heading for Primary Singer -->
+          <div class="section-divider">
+            <h3><i class="fa-solid fa-circle-user"></i> Lead Performer Details</h3>
+          </div>
+
+          <!-- Name field -->
+          <div class="form-group">
+            <label for="name"><i class="fa-regular fa-user"></i> Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            <span class="error-message" id="error-name">Please enter your name.</span>
+          </div>
+
+          <!-- Roll No field -->
+          <div class="form-group">
+            <label for="rollNo"><i class="fa-regular fa-address-card"></i> Roll Number</label>
+            <input type="text" id="rollNo" name="rollNo" placeholder="e.g. 22CS045" required>
+            <span class="error-message" id="error-rollNo">Please enter a valid Roll Number.</span>
+          </div>
+
+          <!-- Course selection -->
+          <div class="form-group">
+            <label for="course"><i class="fa-solid fa-graduation-cap"></i> Course</label>
+            <select id="course" name="course" required>
+              <option value="" disabled selected>Select your course</option>
+              <option value="B.Tech">B.Tech</option>
+              <option value="BCA">BCA</option>
+              <option value="B.Sc">B.Sc</option>
+              <option value="M.Tech">M.Tech</option>
+              <option value="MCA">MCA</option>
+              <option value="MBA">MBA</option>
+            </select>
+            <span class="error-message" id="error-course">Please select your course.</span>
+          </div>
+
+          <!-- Year selection -->
+          <div class="form-group">
+            <label for="year"><i class="fa-regular fa-calendar"></i> Year of Study</label>
+            <select id="year" name="year" required>
+              <option value="" disabled selected>Select your year</option>
+              <option value="1st Year">1st Year</option>
+              <option value="2nd Year">2nd Year</option>
+              <option value="3rd Year">3rd Year</option>
+              <option value="4th Year">4th Year</option>
+            </select>
+            <span class="error-message" id="error-year">Please select your current year.</span>
+          </div>
+
+          <!-- Branch field -->
+          <div class="form-group full-width">
+            <label for="branch"><i class="fa-solid fa-diagram-project"></i> Branch / Specialization</label>
+            <input type="text" id="branch" name="branch" placeholder="e.g. Computer Science & Engineering" required>
+            <span class="error-message" id="error-branch">Please enter your branch.</span>
+          </div>
+
+          <!-- Dynamic Duet Section Container -->
+          <div id="duet-performer-section" class="duet-section-container">
+            <div class="duet-grid">
+              <div class="section-divider">
+                <h3><i class="fa-solid fa-circle-user"></i> Duet Partner Details</h3>
+              </div>
+
+              <!-- Partner Name field -->
+              <div class="form-group">
+                <label for="partnerName"><i class="fa-regular fa-user"></i> Partner Full Name</label>
+                <input type="text" id="partnerName" name="partnerName" placeholder="Enter partner's full name">
+                <span class="error-message" id="error-partnerName">Please enter partner's name.</span>
+              </div>
+
+              <!-- Partner Roll No field -->
+              <div class="form-group">
+                <label for="partnerRollNo"><i class="fa-regular fa-address-card"></i> Partner Roll Number</label>
+                <input type="text" id="partnerRollNo" name="partnerRollNo" placeholder="e.g. 22IT089">
+                <span class="error-message" id="error-partnerRollNo">Please enter partner's Roll Number.</span>
+              </div>
+
+              <!-- Partner Course selection -->
+              <div class="form-group">
+                <label for="partnerCourse"><i class="fa-solid fa-graduation-cap"></i> Partner Course</label>
+                <select id="partnerCourse" name="partnerCourse">
+                  <option value="" disabled selected>Select course</option>
+                  <option value="B.Tech">B.Tech</option>
+                  <option value="BCA">BCA</option>
+                  <option value="B.Sc">B.Sc</option>
+                  <option value="M.Tech">M.Tech</option>
+                  <option value="MCA">MCA</option>
+                  <option value="MBA">MBA</option>
+                </select>
+                <span class="error-message" id="error-partnerCourse">Please select partner's course.</span>
+              </div>
+
+              <!-- Partner Year selection -->
+              <div class="form-group">
+                <label for="partnerYear"><i class="fa-regular fa-calendar"></i> Partner Year</label>
+                <select id="partnerYear" name="partnerYear">
+                  <option value="" disabled selected>Select year</option>
+                  <option value="1st Year">1st Year</option>
+                  <option value="2nd Year">2nd Year</option>
+                  <option value="3rd Year">3rd Year</option>
+                  <option value="4th Year">4th Year</option>
+                </select>
+                  <span class="error-message" id="error-partnerYear">Please select partner's year.</span>
+              </div>
+
+              <!-- Partner Branch field -->
+              <div class="form-group full-width">
+                <label for="partnerBranch"><i class="fa-solid fa-diagram-project"></i> Partner Branch</label>
+                <input type="text" id="partnerBranch" name="partnerBranch" placeholder="e.g. Information Technology">
+                <span class="error-message" id="error-partnerBranch">Please enter partner's branch.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Track File Upload Field -->
+          <div class="section-divider">
+            <h3><i class="fa-solid fa-music"></i> Upload Audition Track</h3>
+          </div>
+
+          <div class="file-upload-wrapper">
+            <div id="file-drag-area" class="file-drag-area" onclick="triggerFileInput()">
+              <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+              <p>Drag & drop your demo audio track here, or <span class="glow-cyan" style="font-weight: bold;">browse files</span></p>
+              <span class="file-limits">Supports MP3, WAV, OGG, M4A, AAC (Max 15MB)</span>
+              <input type="file" id="track" name="track" class="hidden-file-input" accept="audio/*" onchange="handleFileSelect(event)">
+            </div>
+            <span class="error-message" id="error-track" style="text-align: center; display: block; margin-top: 10px;">Please upload an audition audio track.</span>
+          </div>
+
+          <!-- Dynamic Audio Player for Track Preview -->
+          <div id="audio-preview-card" class="audio-preview-card">
+            <div class="audio-info">
+              <i class="fa-solid fa-compact-disc fa-spin"></i>
+              <div class="file-details">
+                <div id="preview-file-name" class="file-name">track_name.mp3</div>
+                <div id="preview-file-size" class="file-size">4.5 MB</div>
+              </div>
+              <button type="button" class="btn-remove-track" onclick="removeSelectedTrack()" title="Remove Track">
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+            <div class="audio-player-controls">
+              <button type="button" id="play-pause-btn" class="play-pause-btn" onclick="toggleAudioPreview()">
+                <i class="fa-solid fa-play"></i>
+              </button>
+              <div class="audio-progress-container">
+                <span id="audio-time-current" class="time-display">0:00</span>
+                <div id="progress-bar-wrapper" class="progress-bar-wrapper" onclick="seekAudioPreview(event)">
+                  <div id="progress-bar-fill" class="progress-bar-fill"></div>
+                </div>
+                <span id="audio-time-duration" class="time-display">0:00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Server Response Error Message Banner -->
+          <div id="response-message-banner" class="response-message-banner"></div>
+
+          <!-- Submit Buttons -->
+          <div class="form-actions">
+            <button type="submit" id="btn-submit-form" class="btn-primary btn-submit-form">
+              <span class="btn-submit-content">
+                <span class="spinner"></span>
+                <span id="btn-submit-text" class="btn-submit-text">Confirm Audition Registration</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Success Ticket Result View (Hidden Initially) -->
+    <div id="success-card-wrapper" class="success-card-wrapper">
+      <div class="success-header" style="margin-bottom: 20px;">
+        <div class="success-icon-badge">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <h2>Registration Successful!</h2>
+        <p style="font-size: 1.25rem; color: #fff; margin-bottom: 30px;">Your response has been recorded.</p>
+      </div>
+
+      <div class="success-actions" style="margin-top: 10px;">
+        <button onclick="resetRegistrationForm()" class="btn-primary" style="width: 100%; max-width: 350px;">
+          Register Another Student
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p style="font-weight: 600; margin-bottom: 8px; color: #fff;">Organized by GLA University</p>
+      <p style="font-size: 0.85rem; color: var(--text-secondary);">Designed with ❤️ by Prakash Kumar Gupta</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

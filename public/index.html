@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official portal for GLA University Presents Battle of Singing 2026. Register as solo or duet performers, view rules, cash prizes, and contact details.">
+  <title>Battle of Singing 2026 | GLA University</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome CDN for music and event icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Navigation Header -->
+    <header>
+      <div class="logo" style="display: flex; align-items: center; gap: 12px;">
+        <img src="gla-logo.jpg" alt="GLA University Logo" style="height: 45px; border-radius: 4px; object-fit: contain;">
+        <span>Battle of Singing</span>
+      </div>
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#prizes">Prizes</a>
+        <a href="#rules">Rules</a>
+        <a href="#contact">Contact</a>
+        <a href="register.html" class="btn-nav-register">Register Now</a>
+      </nav>
+    </header>
+
+    <!-- Main Hero Section -->
+    <main class="hero-wrapper">
+      <div class="hero-content">
+        <span class="hero-subtitle">GLA University Presents</span>
+        <h1 class="gradient-title">Battle of Singing 2026</h1>
+        <p class="hero-catchphrase" style="font-size: 1.25rem; font-weight: 500; color: var(--text-primary); margin-bottom: 25px;">
+          Let Your Voice Shine • Feel the Music • Own the Stage
+        </p>
+
+        <div class="hero-badges-row">
+          <div class="meta-card" style="padding: 10px 20px; border-radius: 30px; margin: 0; background: rgba(0, 0, 0, 0.25);">
+            <div class="meta-icon" style="width: 32px; height: 32px; font-size: 0.95rem; color: var(--neon-magenta)">
+              <i class="fa-regular fa-calendar-days"></i>
+            </div>
+            <div class="meta-info">
+              <p style="font-size: 0.95rem; font-weight: 600; color: #fff;">10 August 2026</p>
+            </div>
+          </div>
+          <div class="meta-card" style="padding: 10px 20px; border-radius: 30px; margin: 0; background: rgba(0, 0, 0, 0.25);">
+            <div class="meta-icon" style="width: 32px; height: 32px; font-size: 0.95rem; color: var(--neon-cyan)">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="meta-info">
+              <p style="font-size: 0.95rem; font-weight: 600; color: #fff;">AB-2, EC Conference Hall</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="register.html" id="cta-register-now" class="btn-primary">
+            <i class="fa-solid fa-ticket"></i> Register Now
+          </a>
+          <a href="#about" id="cta-explore-event" class="btn-secondary">
+            Explore Event
+          </a>
+        </div>
+      </div>
+
+      <!-- Animated Vinyl Record Graphic for Theme Aesthetics -->
+      <div class="hero-visual">
+        <div class="vinyl-container">
+          <div class="vinyl-outer">
+            <div class="vinyl-grooves"></div>
+            <div class="vinyl-center">
+              <div class="vinyl-center-dot"></div>
+            </div>
+          </div>
+          <!-- Stylized turntable tone arm -->
+          <svg class="vinyl-arm" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M80 15 L20 15 L20 120 L40 160" stroke="#777" stroke-width="4" stroke-linecap="round"/>
+            <rect x="75" y="5" width="10" height="20" rx="3" fill="#333"/>
+            <circle cx="80" cy="15" r="4" fill="#111"/>
+            <rect x="33" y="153" width="14" height="20" rx="2" transform="rotate(-15 33 153)" fill="#ff007f"/>
+          </svg>
+        </div>
+      </div>
+    </main>
+
+    <!-- Event Highlights Section -->
+    <section id="about" class="glass-card">
+      <h2 style="text-align: center; margin-bottom: 10px;">Why You Should Participate?</h2>
+      <p style="text-align: center; max-width: 700px; margin: 0 auto 40px; font-size: 1.05rem;">
+        Battle of Singing 2026 is the ultimate musical arena at GLA University. Show your singing talent, perform on a grand stage, and gain massive exposure.
+      </p>
+
+      <!-- Grid for Highlights -->
+      <div class="event-meta-cards" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; margin-bottom: 50px;">
+        <div class="meta-card" style="flex-direction: column; text-align: center; padding: 30px 20px; align-items: center;">
+          <div class="meta-icon" style="width: 60px; height: 60px; font-size: 1.6rem; margin-bottom: 15px;">
+            <i class="fa-solid fa-microphone"></i>
+          </div>
+          <div class="meta-info">
+            <h4 style="margin-bottom: 8px; font-size: 1.1rem; color: #fff; text-transform: none; letter-spacing: 0;">Live Performance</h4>
+            <p style="font-weight: 400; font-size: 0.9rem; color: var(--text-secondary);">Perform in front of judges and a live audience.</p>
+          </div>
+        </div>
+
+        <div class="meta-card" style="flex-direction: column; text-align: center; padding: 30px 20px; align-items: center;">
+          <div class="meta-icon" style="width: 60px; height: 60px; font-size: 1.6rem; margin-bottom: 15px;">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <div class="meta-info">
+            <h4 style="margin-bottom: 8px; font-size: 1.1rem; color: #fff; text-transform: none; letter-spacing: 0;">Certificates</h4>
+            <p style="font-weight: 400; font-size: 0.9rem; color: var(--text-secondary);">Participation certificate for every contestant.</p>
+          </div>
+        </div>
+
+        <div class="meta-card" style="flex-direction: column; text-align: center; padding: 30px 20px; align-items: center;">
+          <div class="meta-icon" style="width: 60px; height: 60px; font-size: 1.6rem; margin-bottom: 15px;">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="meta-info">
+            <h4 style="margin-bottom: 8px; font-size: 1.1rem; color: #fff; text-transform: none; letter-spacing: 0;">Recognition</h4>
+            <p style="font-weight: 400; font-size: 0.9rem; color: var(--text-secondary);">Show your talent and become the next singing star.</p>
+          </div>
+        </div>
+
+        <div class="meta-card" style="flex-direction: column; text-align: center; padding: 30px 20px; align-items: center;">
+          <div class="meta-icon" style="width: 60px; height: 60px; font-size: 1.6rem; margin-bottom: 15px;">
+            <i class="fa-solid fa-camera-retro"></i>
+          </div>
+          <div class="meta-info">
+            <h4 style="margin-bottom: 8px; font-size: 1.1rem; color: #fff; text-transform: none; letter-spacing: 0;">Photography</h4>
+            <p style="font-weight: 400; font-size: 0.9rem; color: var(--text-secondary);">Professional event photography and memories.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stat Badges Horizontal Layout -->
+      <div class="stats-grid">
+        <div style="text-align: center;">
+          <h3 class="glow-magenta" style="font-size: 2.5rem; font-family: var(--font-display); color: var(--neon-magenta); margin-bottom: 5px;">₹15K+</h3>
+          <p style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary);">Total Prize Pool</p>
+        </div>
+        <div style="text-align: center;">
+          <h3 class="glow-cyan" style="font-size: 2.5rem; font-family: var(--font-display); color: var(--neon-cyan); margin-bottom: 5px;">500+</h3>
+          <p style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary);">Expected Participants</p>
+        </div>
+        <div style="text-align: center;">
+          <h3 class="glow-violet" style="font-size: 2.5rem; font-family: var(--font-display); color: var(--neon-violet); margin-bottom: 5px;">01</h3>
+          <p style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary);">Grand Finale</p>
+        </div>
+        <div style="text-align: center;">
+          <h3 style="font-size: 2.5rem; font-family: var(--font-display); color: #fff; margin-bottom: 5px; text-shadow: 0 0 10px rgba(255,255,255,0.2);">100%</h3>
+          <p style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary);">Passion & Music</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prizes Section -->
+    <section id="prizes" class="glass-card">
+      <h2 style="text-align: center; margin-bottom: 10px;">Winner Rewards</h2>
+      <p style="text-align: center; max-width: 600px; margin: 0 auto 45px;">
+        Performers stand a chance to win cash rewards based on judge rankings. Total cash rewards for winners include:
+      </p>
+
+      <!-- Prize Cards Grid -->
+      <div class="prizes-grid">
+        <!-- 2nd Place -->
+        <div class="meta-card" style="flex-direction: column; text-align: center; padding: 40px 20px; border-radius: 20px; background: rgba(0,0,0,0.2); order: 2;">
+          <div class="meta-icon" style="width: 70px; height: 70px; font-size: 2rem; color: #c0c0c0; background: rgba(192, 192, 192, 0.1); box-shadow: inset 0 0 15px rgba(192, 192, 192, 0.2); margin-bottom: 20px;">
+            <i class="fa-solid fa-medal"></i>
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Second Prize</h3>
+          <h4 class="glow-cyan" style="font-size: 2.2rem; font-family: var(--font-display); color: var(--neon-cyan); margin-bottom: 5px;">₹5,000</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">Cash prize + Certificate of Excellence</p>
+        </div>
+
+        <!-- 1st Place (Featured) -->
+        <div class="meta-card" style="flex-direction: column; text-align: center; padding: 50px 20px; border-radius: 20px; background: linear-gradient(135deg, rgba(255, 0, 127, 0.15), rgba(139, 0, 255, 0.15)); border: 1.5px solid var(--neon-magenta); box-shadow: 0 0 25px rgba(255, 0, 127, 0.15); order: 1; transform: scale(1.05);">
+          <div class="meta-icon" style="width: 80px; height: 80px; font-size: 2.5rem; color: #ffd700; background: rgba(255, 215, 0, 0.1); box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.2), 0 0 15px rgba(255, 215, 0, 0.1); margin-bottom: 20px;">
+            <i class="fa-solid fa-trophy"></i>
+          </div>
+          <h3 style="font-size: 1.7rem; margin-bottom: 8px; color: #fff;">First Prize</h3>
+          <h4 class="glow-magenta" style="font-size: 2.8rem; font-family: var(--font-display); color: var(--neon-magenta); margin-bottom: 5px;">₹8,000</h4>
+          <p style="font-size: 0.9rem; color: #fff; opacity: 0.9; margin: 0; font-weight: 500;">Grand Trophy + Recording Deal + Cash</p>
+        </div>
+
+        <!-- 3rd Place -->
+        <div class="meta-card" style="flex-direction: column; text-align: center; padding: 40px 20px; border-radius: 20px; background: rgba(0,0,0,0.2); order: 3;">
+          <div class="meta-icon" style="width: 70px; height: 70px; font-size: 2rem; color: #cd7f32; background: rgba(205, 127, 50, 0.1); box-shadow: inset 0 0 15px rgba(205, 127, 50, 0.2); margin-bottom: 20px;">
+            <i class="fa-solid fa-medal"></i>
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Third Prize</h3>
+          <h4 class="glow-violet" style="font-size: 2.2rem; font-family: var(--font-display); color: var(--neon-violet); margin-bottom: 5px;">₹2,000</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">Cash prize + Certificate of Excellence</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rules Section -->
+    <section id="rules" class="glass-card">
+      <h2>Competition Rules</h2>
+      <p style="margin-bottom: 30px;">
+        Please read all rules and criteria details carefully before submitting your audition details.
+      </p>
+
+      <div class="rules-list">
+        <div class="meta-card" style="padding: 15px 25px; border-radius: 12px;">
+          <div class="meta-icon" style="width: 36px; height: 36px; font-size: 1rem; color: var(--neon-cyan)">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <div class="meta-info">
+            <p style="font-size: 1rem; color: #fff; margin: 0;">Only GLA University students are allowed to participate.</p>
+          </div>
+        </div>
+        <div class="meta-card" style="padding: 15px 25px; border-radius: 12px;">
+          <div class="meta-icon" style="width: 36px; height: 36px; font-size: 1rem; color: var(--neon-cyan)">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <div class="meta-info">
+            <p style="font-size: 1rem; color: #fff; margin: 0;">Audition performance track / song duration should not exceed 4 minutes.</p>
+          </div>
+        </div>
+        <div class="meta-card" style="padding: 15px 25px; border-radius: 12px;">
+          <div class="meta-icon" style="width: 36px; height: 36px; font-size: 1rem; color: var(--neon-cyan)">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <div class="meta-info">
+            <p style="font-size: 1rem; color: #fff; margin: 0;">Participants must upload a valid demo vocal recording file (MP3/WAV, Max 15MB).</p>
+          </div>
+        </div>
+        <div class="meta-card" style="padding: 15px 25px; border-radius: 12px;">
+          <div class="meta-icon" style="width: 36px; height: 36px; font-size: 1rem; color: var(--neon-cyan)">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <div class="meta-info">
+            <p style="font-size: 1rem; color: #fff; margin: 0;">The decision of the judges panel will be final and binding.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="glass-card" style="margin-bottom: 50px;">
+      <h2>Contact Us</h2>
+      <p style="margin-bottom: 35px;">Have questions about the audition process or rules? Reach out to our organizing team details below:</p>
+
+      <div class="contact-grid">
+        <div class="meta-card" style="padding: 25px;">
+          <div class="meta-icon" style="color: var(--neon-cyan)">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div class="meta-info">
+            <h4>Phone</h4>
+            <p><a href="tel:+917970489236" style="color: #fff; text-decoration: none; transition: var(--transition-smooth);" onmouseover="this.style.color='var(--neon-cyan)'" onmouseout="this.style.color='#fff'">+91 79704 89236</a></p>
+          </div>
+        </div>
+
+        <div class="meta-card" style="padding: 25px;">
+          <div class="meta-icon" style="color: var(--neon-magenta)">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div class="meta-info">
+            <h4>Email</h4>
+            <p><a href="mailto:prakashkumargupta999@gmail.com" style="color: #fff; text-decoration: none; transition: var(--transition-smooth);" onmouseover="this.style.color='var(--neon-magenta)'" onmouseout="this.style.color='#fff'">prakashkumargupta999@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="meta-card" style="padding: 25px; grid-column: span 1;">
+          <div class="meta-icon" style="color: var(--neon-violet)">
+            <i class="fa-solid fa-map-location-dot"></i>
+          </div>
+          <div class="meta-info">
+            <h4>Audition Venue</h4>
+            <p>AB-2, EC Conference Hall, GLA University</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p style="font-weight: 600; margin-bottom: 8px; color: #fff;">Organized by GLA University</p>
+      <p style="font-size: 0.85rem; color: var(--text-secondary);">Designed with ❤️ by Prakash Kumar Gupta</p>
+    </footer>
+  </div>
+
+  <script>
+    // Smooth scrolling animation for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          // Update active tab in navbar
+          document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+          this.classList.add('active');
+        }
+      });
+    });
+
+    // Change active link on scroll
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('nav a');
+      let currentSection = 'home';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+          link.classList.add('active');
+        } else if (currentSection === 'home' && link.getAttribute('href') === 'index.html') {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
