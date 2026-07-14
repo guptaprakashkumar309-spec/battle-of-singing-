@@ -415,3 +415,25 @@ function resetRegistrationForm() {
   document.getElementById('registration-card-wrapper').style.display = 'block';
   document.getElementById('registration-card-wrapper').scrollIntoView({ behavior: 'smooth' });
 }
+
+// Check if registrations are closed (after 5 August 2026 11:59:59 PM IST)
+(function checkDeadline() {
+  const DEADLINE = new Date('2026-08-06T00:00:00+05:30');
+  if (new Date() >= DEADLINE) {
+    const cardWrapper = document.getElementById('registration-card-wrapper');
+    if (cardWrapper) {
+      cardWrapper.innerHTML = `
+        <div style="text-align: center; padding: 40px 20px;">
+          <div class="success-icon-badge" style="background: rgba(255, 0, 127, 0.1); border-color: var(--neon-magenta); color: var(--neon-magenta); margin-bottom: 25px; display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; border-radius: 50%; border: 2px solid;">
+            <i class="fa-solid fa-hourglass-end" style="font-size: 1.5rem;"></i>
+          </div>
+          <h2 style="margin-bottom: 15px; background: linear-gradient(45deg, var(--neon-magenta), var(--neon-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Registrations Closed!</h2>
+          <p style="font-size: 1.15rem; color: #fff; margin-bottom: 25px; line-height: 1.6;">
+            Registrations for the Battle of Singing 2026 ended on <strong>5 August 2026</strong>.
+          </p>
+          <a href="index.html" class="btn-primary" style="display: inline-block; width: 100%; max-width: 300px; text-decoration: none; text-align: center; padding: 12px 0; border-radius: 30px; font-weight: 600;">Back to Home</a>
+        </div>
+      `;
+    }
+  }
+})();

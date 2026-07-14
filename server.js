@@ -218,6 +218,12 @@ app.post('/api/register', (req, res) => {
     }
 
     try {
+      // Check registration deadline (5 August 2026 at 11:59:59 PM IST)
+      const DEADLINE = new Date('2026-08-06T00:00:00+05:30');
+      if (new Date() >= DEADLINE) {
+        return res.status(400).json({ success: false, message: 'Registrations are now closed. The last date to register was 5 August 2026.' });
+      }
+
       const {
         name, course, rollNo, year, branch,
         participationType,
