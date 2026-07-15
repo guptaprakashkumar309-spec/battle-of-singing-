@@ -113,16 +113,16 @@ function handleFile(file) {
   fileError.style.display = 'none';
 
   // Basic validation for audio files
-  if (!file.type.startsWith('audio/') && !file.name.match(/\.(mp3|wav|ogg|m4a|aac)$/i)) {
-    showInputError(fileInput, 'Invalid file type. Please upload a valid audio track (MP3/WAV/OGG/M4A/AAC).');
+  if (!file.type.startsWith('audio/') && !file.name.match(/\.(mp3|wav|ogg|m4a|aac|webm|flac|mp4|3gp)$/i)) {
+    showInputError(fileInput, 'Invalid file type. Please upload a valid audio track (MP3/WAV/OGG/M4A/AAC/WEBM).');
     fileInput.value = '';
     return;
   }
 
-  // Size limit validation (15MB)
-  const maxSize = 15 * 1024 * 1024;
+  // Size limit validation (30MB)
+  const maxSize = 30 * 1024 * 1024;
   if (file.size > maxSize) {
-    showInputError(fileInput, 'File is too large. Maximum size allowed is 15MB.');
+    showInputError(fileInput, 'File is too large. Maximum size allowed is 30MB.');
     fileInput.value = '';
     return;
   }

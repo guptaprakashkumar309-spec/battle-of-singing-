@@ -114,11 +114,10 @@ const storage = isCloudStorageEnabled
 
 // Audio file filter function
 const fileFilter = (req, file, cb) => {
-  const allowedMimeTypes = ['audio/mpeg', 'audio/mp3', 'audio/wav', 'audio/wave', 'audio/x-wav', 'audio/ogg', 'audio/mp4', 'audio/aac', 'audio/m4a'];
-  if (allowedMimeTypes.includes(file.mimetype) || file.originalname.match(/\.(mp3|wav|ogg|m4a|aac)$/i)) {
+  if (file.mimetype.startsWith('audio/') || file.originalname.match(/\.(mp3|wav|ogg|m4a|aac|webm|flac|mp4|3gp)$/i)) {
     cb(null, true);
   } else {
-    cb(new Error('Invalid file type. Only audio files (MP3, WAV, OGG, M4A, AAC) are allowed.'));
+    cb(new Error('Invalid file type. Only audio files (MP3, WAV, OGG, M4A, AAC, WEBM, FLAC) are allowed.'));
   }
 };
 
@@ -126,7 +125,7 @@ const upload = multer({
   storage: storage,
   fileFilter: fileFilter,
   limits: {
-    fileSize: 15 * 1024 * 1024 // 15MB file size limit
+    fileSize: 30 * 1024 * 1024 // 30MB file size limit
   }
 });
 
