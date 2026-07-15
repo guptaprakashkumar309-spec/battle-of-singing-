@@ -401,6 +401,41 @@ app.delete('/api/registrations/:id', verifyAdmin, async (req, res) => {
   }
 });
 
+// Diagnostic route: Debug Cloudinary Connection
+app.get('/api/debug-cloudinary', async (req, res) => {
+  try {
+    if (!isCloudStorageEnabled) {
+      return res.status(400).json({ success: false, error: 'Cloud storage is not enabled (missing environment variables).' });
+    }
+    const result = await new Promise((resolve, reject) => {
+      cloudinary.uploader.upload_stream(
+        { resource_type: 'raw', folder: 'debug' },
+        (error, result) => {
+          if (error) reject(error);
+          else resolve(result);
+        }
+      ).end(Buffer.from('debug test'));
+    });
+    res.json({ success: true, message: 'Cloudinary connected successfully!', result });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message || err, stack: err.stack });
+  }
+});
+
+// Diagnostic route: Debug Google Sheet Connection
+app.get('/api/debug-sheet', async (req, res) => {
+  try {
+    if (!isGoogleSheetsEnabled) {
+      return res.status(400).json({ success: false, error: 'Google Sheet integration is not enabled (missing environment variable).' });
+    }
+    const response = await fetch(process.env.GOOGLE_SHEET_WEBAPP_URL);
+    const text = await response.text();
+    res.json({ success: true, status: response.status, bodyLength: text.length, bodyPreview: text.substring(0, 300) });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message, stack: err.stack });
+  }
+});
+
 // Fallback error handler
 app.use((err, req, res, next) => {
   res.status(500).json({ success: false, message: err.message || 'An unknown server error occurred.' });
