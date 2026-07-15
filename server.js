@@ -260,12 +260,30 @@ app.post('/api/register', (req, res) => {
         currentList = readDatabase();
       }
 
-      const rollExists = currentList.some(reg => 
-        reg.rollNo.toLowerCase() === rollNo.trim().toLowerCase() ||
-        (participationType === 'duet' && reg.partnerRollNo && reg.partnerRollNo.toLowerCase() === rollNo.trim().toLowerCase()) ||
-        (reg.partnerRollNo && reg.partnerRollNo.toLowerCase() === partnerRollNo?.trim().toLowerCase()) ||
-        (partnerRollNo && reg.rollNo.toLowerCase() === partnerRollNo.trim().toLowerCase())
-      );
+      const rollExists = currentList.some(reg => {
+        if (!reg) return false;
+        
+        const cleanLeadRoll = (rollNo || '').toString().trim().toLowerCase();
+        const cleanPartnerRoll = (partnerRollNo || '').toString().trim().toLowerCase();
+        
+        const regLeadRoll = (reg.rollNo || '').toString().trim().toLowerCase();
+        const regPartnerRoll = (reg.partnerRollNo || '').toString().trim().toLowerCase();
+        
+        if (!regLeadRoll && !regPartnerRoll) return false;
+        
+        const checkLeadRoll = regLeadRoll && cleanLeadRoll && regLeadRoll === cleanLeadRoll;
+        
+        const checkLeadPartnerRoll = participationType === 'duet' && regPartnerRoll && cleanLeadRoll && 
+          regPartnerRoll === cleanLeadRoll;
+          
+        const checkPartnerLeadRoll = cleanPartnerRoll && regLeadRoll && 
+          regLeadRoll === cleanPartnerRoll;
+          
+        const checkPartnerPartnerRoll = cleanPartnerRoll && regPartnerRoll && 
+          regPartnerRoll === cleanPartnerRoll;
+
+        return checkLeadRoll || checkLeadPartnerRoll || checkPartnerLeadRoll || checkPartnerPartnerRoll;
+      });
 
       if (rollExists) {
         return res.status(400).json({ 
